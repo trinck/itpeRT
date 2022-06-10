@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stocks",
+  "info": {
+    "singularName": "stock",
+    "pluralName": "stocks",
+    "displayName": "Stock",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "decimal"
+    },
+    "expDate": {
+      "type": "date"
+    },
+    "providers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::provider.provider",
+      "inversedBy": "stocks"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employes",
+  "info": {
+    "singularName": "employe",
+    "pluralName": "employes",
+    "displayName": "Employe",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cv": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "salary": {
+      "type": "decimal"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "startDate": {
+      "type": "datetime"
+    },
+    "functions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::function.function",
+      "inversedBy": "employes"
+    },
+    "gender": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::gender.gender"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "employe"
+    }
+  }
+}

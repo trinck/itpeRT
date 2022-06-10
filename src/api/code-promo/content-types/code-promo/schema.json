@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "code_promos",
+  "info": {
+    "singularName": "code-promo",
+    "pluralName": "code-promos",
+    "displayName": "Code_promo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "expDate": {
+      "type": "datetime"
+    },
+    "maximumUse": {
+      "type": "integer"
+    },
+    "reduction": {
+      "type": "integer"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::order.order",
+      "mappedBy": "code_promos"
+    }
+  }
+}
